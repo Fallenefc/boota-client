@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { deleteQuestion } from "../../Services/ApiClient";
-import { deleteQuestionFromQuestionBank } from "../../Store/actions";
-import AddQuestionModal from "../AddQuestionModal/AddQuestionModal";
-import { QuestionDesc } from "../QuestionDesc/QuestionDesc";
-import "./styles.css";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteQuestion } from '../../Services/ApiClient';
+import { deleteQuestionFromQuestionBank } from '../../Store/actions';
+import AddQuestionModal from '../AddQuestionModal/AddQuestionModal';
+import { QuestionDesc } from '../QuestionDesc/QuestionDesc';
+import './styles.css';
 
 interface Props {
   info: any;
@@ -12,7 +12,7 @@ interface Props {
   quizWindow: boolean;
 }
 
-export const QuestionCard = ({ info, index, quizWindow }: Props) => {
+const QuestionCard = ({ info, index, quizWindow }: Props) => {
   const [toggled, setToggled] = useState(false);
   const [clickedModal, setClickedModal] = useState(false);
 
@@ -24,7 +24,7 @@ export const QuestionCard = ({ info, index, quizWindow }: Props) => {
 
   const handleDelete = async (
     questionId: string,
-    questionArrayIndex: number
+    questionArrayIndex: number,
   ) => {
     await deleteQuestion(questionId);
     dispatch(deleteQuestionFromQuestionBank(questionArrayIndex));
@@ -43,27 +43,29 @@ export const QuestionCard = ({ info, index, quizWindow }: Props) => {
         <span className="title-dropdown">
           {quizWindow ? null : (
             <span className="add-to-quiz" onClick={toggleModal}>
-              <i className="fa fa-plus"></i>
+              <i className="fa fa-plus" />
             </span>
           )}
           {quizWindow ? (
             <span>
-              {index + 1}. {info.title}
+              {index + 1}
+              .
+              {info.title}
             </span>
           ) : (
             <span onClick={handleToggle}>
-              <i className="fa fa-caret-down"></i>
+              <i className="fa fa-caret-down" />
               <span>{info.title}</span>
             </span>
           )}
         </span>
         {quizWindow ? null : (
           <span className="edit-delete">
-            <i className="fa fa-edit"></i>
+            <i className="fa fa-edit" />
             <i
               className="fa fa-trash"
               onClick={() => handleDelete(info._id, index)}
-            ></i>
+            />
           </span>
         )}
       </div>
@@ -72,3 +74,5 @@ export const QuestionCard = ({ info, index, quizWindow }: Props) => {
     </div>
   );
 };
+
+export default QuestionCard;

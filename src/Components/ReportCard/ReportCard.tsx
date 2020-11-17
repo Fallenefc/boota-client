@@ -1,8 +1,8 @@
-import React, { ReactElement, useEffect } from "react";
+import React, { ReactElement, useEffect } from 'react';
 
 interface Props {
-  student: string,
-  score: number,
+  student: string;
+  score: number;
 }
 
 export default function ReportCard({ student, score }: Props): ReactElement {
@@ -12,8 +12,14 @@ export default function ReportCard({ student, score }: Props): ReactElement {
 
   return (
     <>
-      <div>Student: {student}</div>  
-      <div>Score: {score}</div>
+      <div>
+        Student:
+        {student}
+      </div>
+      <div>
+        Score:
+        {score}
+      </div>
     </>
   );
 }

@@ -14,7 +14,7 @@ export default function QuizCard({ quiz }: Props): ReactElement {
 
   const handleReportModal = () => {
     setReportModal(false);
-  }
+  };
 
   const handleClick = (id: string) => {
     // redirect to page
@@ -23,7 +23,13 @@ export default function QuizCard({ quiz }: Props): ReactElement {
 
   return (
     <div className="quiz-card-main">
-      {reportModal ? <ReportModal doneBy={quiz.doneBy} title={quiz.title} handleReportModal={handleReportModal}/> : null}
+      {reportModal ? (
+        <ReportModal
+          doneBy={quiz.doneBy}
+          title={quiz.title}
+          handleReportModal={handleReportModal}
+        />
+      ) : null}
       <div className="quiz-card-left" onClick={() => handleClick(quiz._id)}>
         <div className="quizcard-title">{quiz.title}</div>
         <div className="total-questions">
@@ -35,8 +41,8 @@ export default function QuizCard({ quiz }: Props): ReactElement {
           <div className="submitted">Not Submitted</div>
         )}
       </div>
-      <div className='quiz-card-right' onClick={() => setReportModal(true)}>
-            Student Reports ({quiz.doneBy.length})
+      <div className="quiz-card-right" onClick={() => setReportModal(true)}>
+        Student Reports ({quiz.doneBy.length})
       </div>
     </div>
   );

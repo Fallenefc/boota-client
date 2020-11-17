@@ -1,6 +1,6 @@
-import { Question } from "../Interfaces/Questions";
-import { Quiz } from "../Interfaces/Quiz";
-import { User } from "../Interfaces/User";
+import { Question } from '../Interfaces/Questions';
+import { Quiz } from '../Interfaces/Quiz';
+import { User } from '../Interfaces/User';
 
 export const ADD_QUESTION_TO_QUIZ = 'ADD_QUESTION_TO_QUIZ';
 export const ADD_QUESTION_TO_QBANK = 'ADD_QUESTION_TO_QBANK';
@@ -15,13 +15,17 @@ export const API_CALL_IS_MADE = 'API_CALL_IS_MADE';
 export const RESET_API_CALL = 'RESET_API_CALL';
 
 export interface Action {
-  type: string,
-  payload: any
+  type: string;
+  payload: any;
 }
 
-export const addQuestionToQuiz = (quizId: string, question: string): Action => ({
+export const addQuestionToQuiz = (
+  quizId: string,
+  question: string,
+): Action => ({
   type: ADD_QUESTION_TO_QUIZ,
-  payload: { // create obj when you multiple 
+  payload: {
+    // create obj when you multiple
     quizId,
     question,
   },
@@ -29,53 +33,58 @@ export const addQuestionToQuiz = (quizId: string, question: string): Action => (
 
 export const addQuiz = (quiz: Quiz): Action => ({
   type: ADD_QUIZ,
-  payload: quiz
-})
+  payload: quiz,
+});
 
 export const addUser = (user: User | null): Action => ({
   type: ADD_USER,
-  payload: user
-})
+  payload: user,
+});
 
 export const getQuestions = (questions: Question[]): Action => ({
   type: GET_QUESTIONS,
-  payload: questions
-})
+  payload: questions,
+});
 
 export const addQuestionToQuestionBank = (question: any): Action => ({
   type: ADD_QUESTION_TO_QBANK,
-  payload: question
-})
+  payload: question,
+});
 
-export const deleteQuestionFromQuestionBank = (questionIndex: number): Action => ({
+export const deleteQuestionFromQuestionBank = (
+  questionIndex: number,
+): Action => ({
   type: DELETE_QUESTION,
-  payload: questionIndex
-})
+  payload: questionIndex,
+});
 
 export const getQuizzes = (quizzes: any): Action => ({
   type: GET_QUIZZES,
-  payload: quizzes
-})
+  payload: quizzes,
+});
 
 export const deleteAnExam = (examId: string): Action => ({
   type: DELETE_EXAM,
-  payload: examId
-})
+  payload: examId,
+});
 
-export const deleteQuestionFromExam = (examId: string, questionId: string): Action => ({
+export const deleteQuestionFromExam = (
+  examId: string,
+  questionId: string,
+): Action => ({
   type: DELETE_QUESTION_FROM_EXAM,
   payload: {
     examId,
-    questionId
-  }
-})
+    questionId,
+  },
+});
 
 export const apiCallIsMade = (): Action => ({
   type: API_CALL_IS_MADE,
-  payload: true
-})
+  payload: true,
+});
 
 export const resetApiCall = (): Action => ({
   type: RESET_API_CALL,
-  payload: false
-})
+  payload: false,
+});

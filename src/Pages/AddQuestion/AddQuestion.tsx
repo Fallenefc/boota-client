@@ -1,21 +1,20 @@
-import React, { ReactElement, useState } from "react";
-import { useDispatch } from "react-redux";
-import { postQuestion } from "../../Services/ApiClient";
-import { addQuestionToQuestionBank } from "../../Store/actions";
-import "./styles.css";
+import React, { ReactElement, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { postQuestion } from '../../Services/ApiClient';
+import { addQuestionToQuestionBank } from '../../Store/actions';
+import './styles.css';
 
 export default function AddQuestion(): ReactElement {
-  // Ok, this works, it's pretty straightforward and not too confusing, try not to make any major changes so it bugs
 
-  const [options, setOptions] = useState(["", "", ""]);
-  const [stem, setStem] = useState("");
+  const [options, setOptions] = useState(['', '', '']);
+  const [stem, setStem] = useState('');
   const [correct, setCorrect] = useState<number | null>(null);
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState('');
 
   const dispatch = useDispatch();
 
   const handleChange = (e: any, index: number): void => {
-    let stateCopy = [...options];
+    const stateCopy = [...options];
     stateCopy[index] = e.target.value;
     setOptions(stateCopy);
   };
@@ -24,11 +23,11 @@ export default function AddQuestion(): ReactElement {
   const addAlternative = (e: any) => {
     e.preventDefault();
     if (options.length > 5) {
-      alert("Cannot add more alternatives");
+      alert('Cannot add more alternatives');
       return;
     }
-    let newState = [...options];
-    newState.push("");
+    const newState = [...options];
+    newState.push('');
     setOptions(newState);
   };
 
@@ -36,10 +35,10 @@ export default function AddQuestion(): ReactElement {
   const deleteOption = (e: any, index: number) => {
     e.preventDefault();
     if (options.length <= 2) {
-      alert("Minimum of two choices");
+      alert('Minimum of two choices');
       return;
     }
-    let newState = [...options];
+    const newState = [...options];
     newState.splice(index, 1);
     setOptions(newState);
   };
@@ -50,20 +49,22 @@ export default function AddQuestion(): ReactElement {
     console.log(title, stem, correct);
 
     if (!title || !stem || correct === null) {
-      alert("Missing one or more params, or you did not define a correct answer");
+      alert(
+        'Missing one or more params, or you did not define a correct answer',
+      );
       return;
     }
 
     const response = await postQuestion({
-      title: title,
-      stem: stem,
-      correct: correct,
-      options: options,
-      category: "Test",
+      title,
+      stem,
+      correct,
+      options,
+      category: 'Test',
     });
     if (response) dispatch(addQuestionToQuestionBank(response.data));
 
-    setOptions(["", "", ""]);
+    setOptions(['', '', '']);
     setStem('');
     setTitle('');
     setCorrect(null);
@@ -71,7 +72,7 @@ export default function AddQuestion(): ReactElement {
 
   return (
     <div className="add-question-container">
-      <form className="question-form">
+      <form className="question-form" onSubmit={(event) => handleSubmit(event)}>
         <p>Question Title</p>
         <input
           type="text"
@@ -87,35 +88,39 @@ export default function AddQuestion(): ReactElement {
           value={stem}
           onChange={(e) => setStem(e.target.value)}
         />
-        {options.map((option: string, index: number) => {
-          return (
-            <div className="options">
-              <span>Option #{index + 1}</span>
-              <span className="option-input">
-                <input
-                  type="text"
-                  value={options[index]}
-                  onChange={(event) => {
-                    handleChange(event, index);
-                  }}
-                ></input>
-              </span>
-              <i className="fa fa-check fa-2x" id='correct'></i>
-              <span className="option-input-radio">
-                <input
-                  type="radio"
-                  name="correct"
-                  value={index}
-                  onChange={() => setCorrect(index)}
-                ></input>
-              </span>
-              <i className="fa fa-3x fa-trash" onClick={(event) => deleteOption(event, index)}></i>
-            </div>
-          );
-        })}
+        {options.map((option: string, index: number) => (
+          <div className="options">
+            <span>
+              Option #
+              {index + 1}
+            </span>
+            <span className="option-input">
+              <input
+                type="text"
+                value={options[index]}
+                onChange={(event) => {
+                  handleChange(event, index);
+                }}
+              />
+            </span>
+            <i className="fa fa-check fa-2x" id="correct" />
+            <span className="option-input-radio">
+              <input
+                type="radio"
+                name="correct"
+                value={index}
+                onChange={() => setCorrect(index)}
+              />
+            </span>
+            <i
+              className="fa fa-3x fa-trash"
+              onClick={(event) => deleteOption(event, index)}
+            />
+          </div>
+        ))}
         <div className="bottom-buttons">
-          <button onClick={addAlternative}>Add Option</button>
-          <button onClick={(event) => handleSubmit(event)}>Submit</button>
+          <button onClick={addAlternative} type="button">Add Option</button>
+          <button type="submit">Submit</button>
         </div>
       </form>
     </div>
