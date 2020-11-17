@@ -17,7 +17,6 @@ const LoggedOnRoutes = () => (
     <div className="container">
       <NavBar />
       <Switch>
-        <div className="container-box">
           <Route exact path="/" component={() => <Dashboard />} />
           <Route path="/addQuestion" exact component={AddQuestion} />
           <Route path="/viewQuestions" exact component={QuestionList} />
@@ -25,7 +24,6 @@ const LoggedOnRoutes = () => (
           <Route path="/createQuiz" exact component={CreateQuiz} />
           <Route path="/quiz/:quizId" exact component={SingleQuizPage} />
           <Route path="/studentExam/:examId" exact component={StudentExam} />
-        </div>
       </Switch>
     </div>
   </BrowserRouter>

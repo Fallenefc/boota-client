@@ -31,7 +31,7 @@ export default function Header(): ReactElement<React.FC> {
       </div>
       <div className="user-logout">
         <div className="welcome">
-          Welcome,
+          Welcome, {" "}
           {user?.name}
           !
         </div>

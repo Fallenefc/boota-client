@@ -201,10 +201,12 @@ footer:hover {
 
 .footer-distributed .footer-links{
 	color:  #ffffff;
-	margin: 20px 0 12px;
+  margin: 20px 0 12px;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer-distributed .footer-links a{
+.footer-distributed .footer-links p{
 	display:inline-block;
 	line-height: 1.8;
 	text-decoration: none;

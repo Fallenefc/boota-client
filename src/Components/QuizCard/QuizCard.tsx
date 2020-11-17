@@ -17,7 +17,6 @@ export default function QuizCard({ quiz }: Props): ReactElement {
   };
 
   const handleClick = (id: string) => {
-    // redirect to page
     history.push({ pathname: `/quiz/${id}` });
   };
 

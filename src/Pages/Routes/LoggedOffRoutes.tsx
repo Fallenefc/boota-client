@@ -9,14 +9,8 @@ const LoggedRoutes: React.FC = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Landing} />
-    </Switch>
-    <Switch>
       <Route path="/login" exact component={Login} />
-    </Switch>
-    <Switch>
       <Route path="/signup" exact component={Signup} />
-    </Switch>
-    <Switch>
       <Route path="/resetPassword" exact component={ResetPassword} />
     </Switch>
   </BrowserRouter>

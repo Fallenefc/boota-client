@@ -85,11 +85,11 @@ export default function Landing(): ReactElement {
               <span> Me</span>
             </h3>
 
-            <p className="footer-links">
+            <span className="footer-links">
               <p>Home</p>
               <p>About</p>
               <p>Contact</p>
-            </p>
+            </span>
 
             <p className="footer-company-name">© 2020 FallenEFC</p>
           </div>
