@@ -1,0 +1,41 @@
+.left-nav-bar {
+  /* background: var(--color-primary-dark); */
+  background: linear-gradient(0deg,  var(--color-primary-light), var(--color-primary));
+  width: 15%;
+  min-width: 150px;
+}
+
+.left-nav-bar button {
+  /* background-color: var(--color-secondary-dark); */
+  background: linear-gradient(0deg, var(--color-secondary-dark), var(--color-secondary));
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  color: white;
+  font-weight: 600;
+}
+
+.left-nav-bar button:hover {
+  background: linear-gradient(0deg, var(--color-secondary), var(--color-secondary-light));
+  transition: ease 0.3s;
+  color: black;
+}
+
+/* Development Only */
+#disabled { 
+  background-color: grey !important;
+  cursor: default;
+}
+
+.student-teacher-choices {
+  background: var(--color-primary-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 100%;
+  height: 50px;
+  color: white;
+  font-weight: 600;
+}

@@ -1,0 +1,41 @@
+.header {
+  /* background-color: var(--color-primary); */
+  background: linear-gradient(270deg,  var(--color-primary-light), var(--color-primary));
+  color: white;
+  padding: 10px;
+  display: flex;
+  height: 9%;
+  justify-content: space-between;
+}
+
+.website-logo {
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.user-logout {
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.user-logout div {
+  margin-right: 30px;
+}
+
+.logout-button button {
+  background-color: var(--color-secondary-dark);
+  border: none;
+  padding: 5px;
+  width: 80px;
+  border-radius: 5px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-button button:hover {
+  background-color: var(--color-secondary-light);
+  color: black;
+  transition: 0.5s ease;
+}

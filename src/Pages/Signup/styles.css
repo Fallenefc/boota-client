@@ -1,0 +1,15 @@
+.green {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.signup-form-container {
+  background-color: white;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 10px solid var(--color-primary);
+  padding-left: 80px;
+}

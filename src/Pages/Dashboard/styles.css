@@ -1,0 +1,27 @@
+.dashboard-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--color-secondary-dark);
+  color: white;
+  /* background: rgb(234,144,244); */
+}
+
+.dashboard-nav-and-container {
+  display: flex;
+}
+
+.dashboard-container span {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  color:#fff;
+}
+
+#special {
+  color: var(--color-primary-light);
+  font-weight: 600;
+}
