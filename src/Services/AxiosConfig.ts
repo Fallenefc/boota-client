@@ -1,10 +1,10 @@
-import axios from "axios";
-const acesstoken = localStorage.getItem("token");
+import axios from 'axios';
+const acesstoken = localStorage.getItem('token');
 
 const api = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: 'http://localhost:5000',
   headers: {
-    Authorization: acesstoken ? acesstoken : "",
+    Authorization: acesstoken ? acesstoken : '',
   },
 });
 

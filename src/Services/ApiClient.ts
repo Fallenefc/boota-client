@@ -10,7 +10,6 @@ export const getInfo = async () => {
     const response: AxiosResponse = await api.get('/me');
     return response;
   } catch (err) {
-    console.error(err);
     return false;
   }
 };
@@ -20,17 +19,14 @@ export const getApiQuestions = async () => {
     const response: AxiosResponse = await api.get('/questions');
     return response;
   } catch (err) {
-    console.log(err);
   }
 };
 
 export const postQuestion = async (questionBody: any) => {
   try {
-    console.log(questionBody);
     const response: AxiosResponse = await api.post('/questions', questionBody);
     return response;
   } catch (err) {
-    console.error(err);
   }
 };
 
@@ -38,7 +34,6 @@ export const deleteQuestion = async (questionId: string) => {
   try {
     await api.delete(`/questions/${questionId}`);
   } catch (err) {
-    console.error(err);
   }
 };
 
@@ -47,7 +42,6 @@ export const getApiQuizzes = async () => {
     const response: AxiosResponse = await api.get('/exams');
     return response;
   } catch (err) {
-    console.log(err);
   }
 };
 
@@ -56,7 +50,6 @@ export const getFullQuiz = async (quizId: string) => {
     const response: AxiosResponse = await api.get(`/singleExam/${quizId}`);
     return response;
   } catch (err) {
-    console.log(err);
   }
 };
 
@@ -65,7 +58,6 @@ export const createExam = async (title: string) => {
     const response: AxiosResponse = await api.post('/exams', { title });
     return response.data;
   } catch (err) {
-    console.error(err);
   }
 };
 
@@ -78,10 +70,8 @@ export const apiAddQuestionToQuiz = async (
       questionId,
       _id: quizId,
     });
-    console.log(response);
     return questionId;
   } catch (err) {
-    console.error(err);
   }
 };
 
@@ -90,7 +80,6 @@ export const apiDeleteAnExam = async (examId: string) => {
     await api.delete(`/exams/${examId}`);
     return true;
   } catch (err) {
-    console.error(err);
   }
 };
 
@@ -105,7 +94,6 @@ export const apiDeleteQuestionFromExam = async (
     });
     return true;
   } catch (err) {
-    console.error(err);
   }
 };
 
@@ -114,7 +102,6 @@ export const apiGetFullExamAsAStudent = async (examId: string) => {
     const response = await api.get(`/startExam/${examId}`);
     return response.data;
   } catch (err) {
-    console.error(err);
   }
 };
 
@@ -131,7 +118,6 @@ export const submitAnExamAsAStudent = async (
     });
     return response;
   } catch (err) {
-    console.error(err);
   }
 };
 
@@ -142,6 +128,5 @@ export const submitAnExamAsATeacher = async (examId: string) => {
     });
     return response.data;
   } catch (err) {
-    console.error(err);
   }
 };

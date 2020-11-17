@@ -1,15 +1,15 @@
-import React, { ReactElement, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
-import AlertModal from '../../Components/AlertModal/AlertModal';
-import QuestionCard from '../../Components/QuestionCard/QuestionCard';
+import React, { ReactElement, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory, useParams } from "react-router-dom";
+import AlertModal from "../../Components/AlertModal/AlertModal";
+import QuestionCard from "../../Components/QuestionCard/QuestionCard";
 import {
   apiDeleteAnExam,
   getFullQuiz,
   submitAnExamAsATeacher,
-} from '../../Services/ApiClient';
-import { deleteAnExam } from '../../Store/actions';
-import './styles.css';
+} from "../../Services/ApiClient";
+import { deleteAnExam, makeAQuizSubmittion } from "../../Store/actions";
+import "./styles.css";
 
 export default function SingleQuizPage(): ReactElement {
   interface Params {
@@ -30,7 +30,6 @@ export default function SingleQuizPage(): ReactElement {
 
   useEffect(() => {
     getFullQuiz(params.quizId).then((response: any) => {
-      console.log(response.data);
       setFullQuiz(response.data);
       if (response.data.submitted === true) setSubmittedQuiz(true);
     });
@@ -39,24 +38,24 @@ export default function SingleQuizPage(): ReactElement {
   const deleteQuiz = () => {
     apiDeleteAnExam(params.quizId).then(() => {
       dispatch(deleteAnExam(params.quizId));
-      history.push({ pathname: '/viewQuizzes' });
+      history.push({ pathname: "/viewQuizzes" });
     });
   };
 
   const submitQuiz = async () => {
-    const response = submitAnExamAsATeacher(fullQuiz._id);
+    const response: any = await submitAnExamAsATeacher(fullQuiz._id);
     // use Redux to change the quiz state...
-    console.log(response);
-    history.push({ pathname: '/viewQuizzes' });
+    dispatch(makeAQuizSubmittion(response));
+    history.push({ pathname: "/viewQuizzes" });
   };
 
   const textToClipboard = () => {
     setAlertModal(true);
-    const dummy = document.createElement('textarea');
+    const dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
     dummy.value = `http://localhost:3000/studentExam/${fullQuiz.hashedId}`;
     dummy.select();
-    document.execCommand('copy');
+    document.execCommand("copy");
     document.body.removeChild(dummy);
   };
 
@@ -79,20 +78,20 @@ export default function SingleQuizPage(): ReactElement {
         )}
         {fullQuiz
           ? fullQuiz.questions.map((question: any, index: any) => (
-            <div>
-              <QuestionCard
-                info={question}
-                index={index}
-                quizWindow
-              />
-            </div>
-          ))
+              <div key={question._id}>
+                <QuestionCard info={question} index={index} quizWindow />
+              </div>
+            ))
           : null}
         <button onClick={deleteQuiz} className="delete-btn" type="button">
           Delete Quiz
         </button>
         {submittedQuiz ? (
-          <button className="submit-btn" onClick={textToClipboard} type="button">
+          <button
+            className="submit-btn"
+            onClick={textToClipboard}
+            type="button"
+          >
             Copy Quiz Link
           </button>
         ) : (

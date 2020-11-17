@@ -1,5 +1,5 @@
-import React, { ReactElement } from "react";
-import "./styles.css";
+import React, { ReactElement } from 'react';
+import './styles.css';
 
 interface Props {
   // should take two props: text and the function to close the modal

@@ -87,9 +87,7 @@ export default function Landing(): ReactElement {
 
             <p className="footer-links">
               <p>Home</p>
-              |
               <p>About</p>
-              |
               <p>Contact</p>
             </p>
 

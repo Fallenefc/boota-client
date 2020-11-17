@@ -46,7 +46,6 @@ export default function AddQuestion(): ReactElement {
   // Makes the API call and updates the state, redirect to view questions
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(title, stem, correct);
 
     if (!title || !stem || correct === null) {
       alert(
@@ -88,8 +87,8 @@ export default function AddQuestion(): ReactElement {
           value={stem}
           onChange={(e) => setStem(e.target.value)}
         />
-        {options.map((option: string, index: number) => (
-          <div className="options">
+        {options.map((_: any, index: number) => (
+          <div className="options" key={index}>
             <span>
               Option #
               {index + 1}

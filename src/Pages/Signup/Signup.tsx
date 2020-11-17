@@ -63,8 +63,6 @@ const Signup = () => {
     }
     alert('Used signed up successfully!');
     history.push({ pathname: '/login' });
-
-    console.log(email, password, passwordConf, name);
   };
 
   const handleChange = (event: any) => {

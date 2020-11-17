@@ -27,7 +27,6 @@ export default function StudentExam(): ReactElement {
   useEffect(() => {
     apiGetFullExamAsAStudent(params.examId).then((response: any) => {
       setExam(response);
-      // console.log(response);
       response.options.forEach((value: any) => {
         answers[value._id] = null;
         setQuestionsIds((array: any) => [...array, value._id]);
@@ -38,7 +37,6 @@ export default function StudentExam(): ReactElement {
   const handleChoice = (questionId: string, choice: number) => {
     const answersCopy = { ...answers };
     answersCopy[questionId] = choice;
-    console.log(answersCopy);
     setAnswers(answersCopy);
   };
 
@@ -78,6 +76,7 @@ export default function StudentExam(): ReactElement {
             index={index}
             handleChoice={handleChoice}
             id={option._id}
+            key={option._id}
           />
         ))
       ) : (

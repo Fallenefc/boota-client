@@ -35,7 +35,7 @@ export default function AddQuestionModal({
         </button>
       </div>
       {quizzes.map((quiz) => (
-        <div className="add-modal-quizoption">
+        <div className="add-modal-quizoption" key={quiz._id}>
           <button
             type="button"
             onClick={() => {

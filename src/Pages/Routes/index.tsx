@@ -9,7 +9,6 @@ import LoggedOnRoutes from './LoggedOnRoutes';
 
 const Routes: any = () => {
   const user = useSelector((state: State) => state.user);
-  console.log(user);
   return user ? <LoggedOnRoutes /> : <LoggedOffRoutes />;
 };
 

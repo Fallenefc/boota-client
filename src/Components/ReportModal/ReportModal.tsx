@@ -24,7 +24,7 @@ export default function ReportModal({
           {title}
         </span>
         {doneBy.map((student: any) => (
-          <ReportCard student={student.studentEmail} score={student.score} />
+          <ReportCard student={student.studentEmail} score={student.score} key={student.studentEmail}/>
         ))}
       </div>
     </div>

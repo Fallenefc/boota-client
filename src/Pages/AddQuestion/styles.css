@@ -24,6 +24,7 @@
 .question-form input {
   width: 90%;
   height: 40px;
+  outline: none;
 }
 
 .question-form p{

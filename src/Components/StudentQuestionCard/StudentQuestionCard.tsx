@@ -17,14 +17,14 @@ export default function StudentQuestionCard({
   id,
 }: Props): ReactElement {
   return (
-    <div className="student-question-card">
+    <div className="student-question-card" key={id}>
       <h3 className="student-question-stem">
         {index + 1}
         .
         {stem}
       </h3>
       {options.map((option: string, mapIndex: number) => (
-        <div className="options-container">
+        <div className="options-container" key={mapIndex}>
           <input
             type="radio"
             onClick={() => handleChoice(id, mapIndex)}

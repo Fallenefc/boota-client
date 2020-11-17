@@ -1,7 +1,7 @@
-import React, { ReactElement, useState } from "react";
-import { useHistory } from "react-router-dom";
-import ReportModal from "../ReportModal/ReportModal";
-import "./styles.css";
+import React, { ReactElement, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import ReportModal from '../ReportModal/ReportModal';
+import './styles.css';
 
 interface Props {
   quiz: any;
@@ -33,16 +33,23 @@ export default function QuizCard({ quiz }: Props): ReactElement {
       <div className="quiz-card-left" onClick={() => handleClick(quiz._id)}>
         <div className="quizcard-title">{quiz.title}</div>
         <div className="total-questions">
-          Total Questions: {quiz.questions.length}
+          Total Questions:
+          {' '}
+          {quiz.questions.length}
         </div>
         {quiz.submitted ? (
-          <div className="submitted">Quiz ID: {quiz.hashedId}</div>
+          <div className="submitted">
+            Quiz ID:
+            {quiz.hashedId}
+          </div>
         ) : (
           <div className="submitted">Not Submitted</div>
         )}
       </div>
       <div className="quiz-card-right" onClick={() => setReportModal(true)}>
-        Student Reports ({quiz.doneBy.length})
+        Student Reports (
+        {quiz.doneBy.length}
+        )
       </div>
     </div>
   );

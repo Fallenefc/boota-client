@@ -14,6 +14,7 @@ import {
   GET_QUESTIONS,
   GET_QUIZZES,
   RESET_API_CALL,
+  SUBMIT_QUIZ,
 } from './actions';
 
 const initialState: State = {
@@ -102,7 +103,11 @@ export const reducer = (state = initialState, action: Action) => {
         ...state,
         isApiCallMade: action.payload,
       };
-
+    case SUBMIT_QUIZ:
+      return {
+        ...state,
+        quizzes: [...state.quizzes.filter((quiz) => quiz._id !== action.payload._id), action.payload]
+      }
     default:
       return state;
   }

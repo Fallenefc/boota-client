@@ -13,6 +13,7 @@ export const DELETE_EXAM = 'DELETE_EXAM';
 export const DELETE_QUESTION_FROM_EXAM = 'DELETE_QUESTION_FROM_EXAM';
 export const API_CALL_IS_MADE = 'API_CALL_IS_MADE';
 export const RESET_API_CALL = 'RESET_API_CALL';
+export const SUBMIT_QUIZ = 'SUBMIT_QUIZ';
 
 export interface Action {
   type: string;
@@ -88,3 +89,8 @@ export const resetApiCall = (): Action => ({
   type: RESET_API_CALL,
   payload: false,
 });
+
+export const makeAQuizSubmittion = (newQuiz: any):Action => ({
+  type: SUBMIT_QUIZ,
+  payload: newQuiz
+})

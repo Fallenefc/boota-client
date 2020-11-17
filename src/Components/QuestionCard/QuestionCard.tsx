@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { deleteQuestion } from '../../Services/ApiClient';
 import { deleteQuestionFromQuestionBank } from '../../Store/actions';
 import AddQuestionModal from '../AddQuestionModal/AddQuestionModal';
-import { QuestionDesc } from '../QuestionDesc/QuestionDesc';
+import QuestionDesc from '../QuestionDesc/QuestionDesc';
 import './styles.css';
 
 interface Props {
