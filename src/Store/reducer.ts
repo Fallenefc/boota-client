@@ -109,7 +109,7 @@ export const reducer = (state = initialState, action: Action) => {
         ...state,
         quizzes: [...state.quizzes.filter((quiz) => quiz._id !== action.payload._id), action.payload]
       };
-    case RESET_REDUX_STATE:
+    case RESET_REDUX_STATE: // not needed, delete later and see if breaks
       return {
         ...state,
         isApiCallMade: false
