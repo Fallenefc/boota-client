@@ -35,9 +35,9 @@ export default function Login(): ReactElement {
     logIn(email, password)
       .then((response) => {
         localStorage.setItem('token', `Bearer ${response.data.token}`);
-        dispatch(resetApiCall());
         history.push({ pathname: '/' });
-        dispatch(addUser(response.data.user));
+        dispatch(addUser(response.data.user));       
+        dispatch(resetApiCall());
       })
       .catch(() => {
         setAlertModal(true);

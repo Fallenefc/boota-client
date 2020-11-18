@@ -7,7 +7,7 @@ import api from './AxiosConfig';
 // Makes the API request to the /me endpoint and if the user is authorized, it
 export const getInfo = async () => {
   try {
-    const response: AxiosResponse = await api.get('/me');
+    const response: AxiosResponse = await api().get('/me');
     return response;
   } catch (err) {
     return false;
@@ -16,7 +16,7 @@ export const getInfo = async () => {
 
 export const getApiQuestions = async () => {
   try {
-    const response: AxiosResponse = await api.get('/questions');
+    const response: AxiosResponse = await api().get('/questions');
     return response;
   } catch (err) {
   }
@@ -24,7 +24,7 @@ export const getApiQuestions = async () => {
 
 export const postQuestion = async (questionBody: any) => {
   try {
-    const response: AxiosResponse = await api.post('/questions', questionBody);
+    const response: AxiosResponse = await api().post('/questions', questionBody);
     return response;
   } catch (err) {
   }
@@ -32,14 +32,14 @@ export const postQuestion = async (questionBody: any) => {
 
 export const deleteQuestion = async (questionId: string) => {
   try {
-    await api.delete(`/questions/${questionId}`);
+    await api().delete(`/questions/${questionId}`);
   } catch (err) {
   }
 };
 
 export const getApiQuizzes = async () => {
   try {
-    const response: AxiosResponse = await api.get('/exams');
+    const response: AxiosResponse = await api().get('/exams');
     return response;
   } catch (err) {
   }
@@ -47,7 +47,7 @@ export const getApiQuizzes = async () => {
 
 export const getFullQuiz = async (quizId: string) => {
   try {
-    const response: AxiosResponse = await api.get(`/singleExam/${quizId}`);
+    const response: AxiosResponse = await api().get(`/singleExam/${quizId}`);
     return response;
   } catch (err) {
   }
@@ -55,7 +55,7 @@ export const getFullQuiz = async (quizId: string) => {
 
 export const createExam = async (title: string) => {
   try {
-    const response: AxiosResponse = await api.post('/exams', { title });
+    const response: AxiosResponse = await api().post('/exams', { title });
     return response.data;
   } catch (err) {
   }
@@ -66,7 +66,7 @@ export const apiAddQuestionToQuiz = async (
   quizId: string
 ) => {
   try {
-    const response: AxiosResponse = await api.post('/addQuestion', {
+    const response: AxiosResponse = await api().post('/addQuestion', {
       questionId,
       _id: quizId,
     });
@@ -77,7 +77,7 @@ export const apiAddQuestionToQuiz = async (
 
 export const apiDeleteAnExam = async (examId: string) => {
   try {
-    await api.delete(`/exams/${examId}`);
+    await api().delete(`/exams/${examId}`);
     return true;
   } catch (err) {
   }
@@ -88,7 +88,7 @@ export const apiDeleteQuestionFromExam = async (
   questionId: string,
 ) => {
   try {
-    await api.post('/deleteQuestion', {
+    await api().post('/deleteQuestion', {
       examId,
       questionId,
     });
@@ -99,7 +99,7 @@ export const apiDeleteQuestionFromExam = async (
 
 export const apiGetFullExamAsAStudent = async (examId: string) => {
   try {
-    const response = await api.get(`/startExam/${examId}`);
+    const response = await api().get(`/startExam/${examId}`);
     return response.data;
   } catch (err) {
   }
@@ -111,7 +111,7 @@ export const submitAnExamAsAStudent = async (
   questions: string[]
 ) => {
   try {
-    const response = await api.post('/finishExam', {
+    const response = await api().post('/finishExam', {
       hashedId: examId,
       questions,
       answers,
@@ -123,7 +123,7 @@ export const submitAnExamAsAStudent = async (
 
 export const submitAnExamAsATeacher = async (examId: string) => {
   try {
-    const response = await api.post('/generateExam', {
+    const response = await api().post('/generateExam', {
       examId,
     });
     return response.data;

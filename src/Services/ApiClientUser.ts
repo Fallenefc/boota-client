@@ -6,7 +6,7 @@ import api from './AxiosConfig';
 
 export const logIn = async (username: string, password: string) => {
   try {
-    const response: any = await api.post('/login', {
+    const response: any = await api().post('/login', {
       username: username,
       password: password,
     });
@@ -18,7 +18,7 @@ export const logIn = async (username: string, password: string) => {
 
 export const signUp = async (user: any) => {
   try {
-    await api.post('/signup', user);
+    await api().post('/signup', user);
     return true;
   } catch (err) {
     return false;
