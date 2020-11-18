@@ -44,9 +44,7 @@ export default function SingleQuizPage(): ReactElement {
 
   const submitQuiz = async () => {
     const response: any = await submitAnExamAsATeacher(fullQuiz._id);
-    console.log(response);
-    // use Redux to change the quiz state...
-    dispatch(makeAQuizSubmittion(response));
+    dispatch(makeAQuizSubmittion(response.updatedExam));
     history.push({ pathname: "/viewQuizzes" });
   };
 
