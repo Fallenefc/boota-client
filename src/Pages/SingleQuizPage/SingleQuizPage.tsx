@@ -52,7 +52,7 @@ export default function SingleQuizPage(): ReactElement {
     setAlertModal(true);
     const dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
-    dummy.value = `http://localhost:3000/studentExam/${fullQuiz.hashedId}`;
+    dummy.value = `https://reverent-knuth-ec436c.netlify.app/studentExam/${fullQuiz.hashedId}`;
     dummy.select();
     document.execCommand("copy");
     document.body.removeChild(dummy);

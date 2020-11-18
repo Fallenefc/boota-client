@@ -7,11 +7,13 @@ import logoImg from '../../Assets/logo2.svg';
 import { logIn } from '../../Services/ApiClientUser';
 import AlertModal from '../../Components/AlertModal/AlertModal';
 import { addUser, resetApiCall } from '../../Store/actions';
+import Loader from 'react-loader-spinner';
 
 export default function Login(): ReactElement {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [alertModal, setAlertModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -31,15 +33,18 @@ export default function Login(): ReactElement {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    setIsLoading(true);
     // make the API request for a login, store the token in the local storage
     logIn(email, password)
       .then((response) => {
         localStorage.setItem('token', `Bearer ${response.data.token}`);
+        setIsLoading(false);
         history.push({ pathname: '/' });
         dispatch(addUser(response.data.user));       
         dispatch(resetApiCall());
       })
       .catch(() => {
+        setIsLoading(false);
         setAlertModal(true);
       });
     // reset
@@ -53,6 +58,15 @@ export default function Login(): ReactElement {
 
   return (
     <div className="login-page">
+      {isLoading ? 
+      <div className="loader">
+      <Loader
+        type="Puff"
+        color="#fff"
+        height={100}
+        width={100}
+        timeout={10000}
+      /> <span className='loading-text'>Loading...</span> </div> : null}
       <div className="login-container">
         <div className="login-form-container">
           <div className="content-top">
