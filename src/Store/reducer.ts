@@ -14,10 +14,11 @@ import {
   GET_QUESTIONS,
   GET_QUIZZES,
   RESET_API_CALL,
+  RESET_REDUX_STATE,
   SUBMIT_QUIZ,
 } from './actions';
 
-const initialState: State = {
+export const initialState: State = {
   running: null,
   user: null,
   quizzes: [],
@@ -107,6 +108,10 @@ export const reducer = (state = initialState, action: Action) => {
       return {
         ...state,
         quizzes: [...state.quizzes.filter((quiz) => quiz._id !== action.payload._id), action.payload]
+      }
+    case RESET_REDUX_STATE:
+      return {
+        state: action.payload
       }
     default:
       return state;

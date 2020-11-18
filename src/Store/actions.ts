@@ -1,6 +1,7 @@
 import { Question } from '../Interfaces/Questions';
 import { Quiz } from '../Interfaces/Quiz';
 import { User } from '../Interfaces/User';
+import { initialState } from './reducer';
 
 export const ADD_QUESTION_TO_QUIZ = 'ADD_QUESTION_TO_QUIZ';
 export const ADD_QUESTION_TO_QBANK = 'ADD_QUESTION_TO_QBANK';
@@ -14,6 +15,7 @@ export const DELETE_QUESTION_FROM_EXAM = 'DELETE_QUESTION_FROM_EXAM';
 export const API_CALL_IS_MADE = 'API_CALL_IS_MADE';
 export const RESET_API_CALL = 'RESET_API_CALL';
 export const SUBMIT_QUIZ = 'SUBMIT_QUIZ';
+export const RESET_REDUX_STATE = 'RESET_REDUX_STATE';
 
 export interface Action {
   type: string;
@@ -93,4 +95,9 @@ export const resetApiCall = (): Action => ({
 export const makeAQuizSubmittion = (newQuiz: any):Action => ({
   type: SUBMIT_QUIZ,
   payload: newQuiz
+});
+
+export const resetReduxState = ():Action => ({
+  type: RESET_REDUX_STATE,
+  payload: initialState
 })
