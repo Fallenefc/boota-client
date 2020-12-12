@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# Boota
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  - [Introduction](#introduction)
+  - [How does it work](#how-does-it-work)
+  - [Getting Started](#getting-started)
+  - [Known Issues](#known-issues)
+  - [Links](#links)
 
-## Available Scripts
+### Introduction ###
 
-In the project directory, you can run:
+Boota is an application that allows teachers to create question banks and generate quizzes out of these questions. Teachers can also share quizzes with students via a link, and students would be able to do the quiz and both teacher and student will receive a report card in the end with the student score.
 
-### `yarn start`
+### How does it work ###
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+After registering, you can log in as a teacher and you will be able to add questions clicking on the 'Add Question' tab
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="center">
+  <img src="./public/add-question.png" alt="Size Limit CLI" width="1250">
+</p>
 
-### `yarn test`
+You will be able to see all the questions that you have created in the view questions menu
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <img src="./public/view-questions.png" alt="Size Limit CLI" width="1250">
+</p>
 
-### `yarn build`
+You can click the + sign on the view questions menu to add questions to a certain quiz. After you added all the questions you wanted to, you can submit a quiz clicking the Submit Quiz button at the quiz page.
+After the quiz is submitted, its status will be changed to 'Submitted' and you will be able to copy the quiz link to you clipboard.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+  <img src="./public/copy-quiz-link.png" alt="Size Limit CLI" width="1250">
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Now, share the link with your Student.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+As the student, you will log in and paste the provided link in your browser. This will take you to the quiz page, where you can answer all the questions and submit them at the end. After a few seconds, you will receive a small report card with your score based on your % of correct answers.
 
-### `yarn eject`
+The logic behind the final score is entirely made on the backend, no correct answers are provided on the client to make the application more secure.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="center">
+  <img src="./public/student-page.png" alt="Size Limit CLI" width="1250">
+</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The teacher will also be able to access your score on the View Quizzes menu, clicking on the Student Reports button.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Getting Started ###
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To get started, simply clone this and the server repo to your machine.
+Change the environment variables using the .env.example as your guide (on the server).
+For the client:
 
-## Learn More
+- Change src/Environment.ts to your own server URL.
+- Run npm install.
+- Run npm start.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Known Issues ###
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Disabled password recovery as I am planning to change it from mailgun to nodemailer.
+- Styling is not responsive yet.
+
+## Links ##
+
+Server repository: [...](https://github.com/Fallenefc/boota-server)
+Deployed app: [...](https://reverent-knuth-ec436c.netlify.app/)

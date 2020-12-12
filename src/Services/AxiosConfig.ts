@@ -1,14 +1,13 @@
 import axios from 'axios';
-
-const cors = "https://cors-anywhere.herokuapp.com/";
+import { SERVER_URL } from '../Environment';
 
 const api = () => {
-  const acesstoken = localStorage.getItem('token');
+  const accesstoken = localStorage.getItem('token');
 
   return axios.create({
-    baseURL: `${cors}https://boota-app.herokuapp.com`,
+    baseURL: SERVER_URL,
     headers: {
-      Authorization: acesstoken ? acesstoken : '',
+      Authorization: accesstoken ? accesstoken : '',
     },
   });
 }

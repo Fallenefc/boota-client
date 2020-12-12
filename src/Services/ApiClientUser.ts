@@ -1,7 +1,3 @@
-// API Client Service that makes the GET and the POST requests
-// import axios from 'axios'
-// import { SERVER_URL } from '../Environment'
-// import { QuestionsInterface } from '../Interfaces/Questions';
 import api from './AxiosConfig';
 
 export const logIn = async (username: string, password: string) => {

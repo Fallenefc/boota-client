@@ -87,13 +87,6 @@ export const reducer = (state = initialState, action: Action) => {
         ...state,
         quizzes: state.quizzes.filter((quiz) => quiz._id !== action.payload),
       };
-    // case DELETE_QUESTION_FROM_EXAM:
-    //   const findExam = state.quizzes.filter((quiz) => quiz._id === action.payload.examId);
-    //   // this is not finished lol
-    //   return ({
-    //     ...state,
-    //     quizzes: state.quizzes.
-    //   })
     case API_CALL_IS_MADE:
       return {
         ...state,
@@ -109,7 +102,7 @@ export const reducer = (state = initialState, action: Action) => {
         ...state,
         quizzes: [...state.quizzes.filter((quiz) => quiz._id !== action.payload._id), action.payload]
       };
-    case RESET_REDUX_STATE: // not needed, delete later and see if breaks
+    case RESET_REDUX_STATE:
       return {
         ...state,
         isApiCallMade: false

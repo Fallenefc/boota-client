@@ -1,10 +1,6 @@
-// API Client Service that makes the GET and the POST requests
 import { AxiosResponse } from 'axios';
 import api from './AxiosConfig';
 
-// Get /me information
-
-// Makes the API request to the /me endpoint and if the user is authorized, it
 export const getInfo = async () => {
   try {
     const response: AxiosResponse = await api().get('/me');

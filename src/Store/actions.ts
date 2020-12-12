@@ -35,7 +35,6 @@ export const addQuestionToQuiz = (
 ): Action => ({
   type: ADD_QUESTION_TO_QUIZ,
   payload: {
-    // create obj when you multiple
     quizId,
     question,
   },
