@@ -3,6 +3,7 @@ import './styles.css';
 import landingHero from '../../Assets/landing-hero.svg';
 import { LandingHeader } from '../../Components/LandingHeader/LandingHeader';
 import { useHistory } from 'react-router-dom';
+import { Footer } from '../../Components/Footer/Footer';
 
 export default function Landing(): ReactElement {
   const title = 'Boota';
@@ -61,49 +62,7 @@ export default function Landing(): ReactElement {
             />
           </div>
         </div>
-        <footer className="footer-distributed">
-          <div className="footer-left">
-            {/* <img src="img/logo.png"></img> */}
-            <h3>
-              About
-              <span> Me</span>
-            </h3>
-
-            <span className="footer-links">
-              <p>Home</p>
-              <p>About</p>
-              <p>Contact</p>
-            </span>
-
-            <p className="footer-company-name">© 2020 FallenEFC</p>
-          </div>
-          <div className="footer-center">
-            <div>
-              <i className="fa fa-map-marker" />
-              <p>
-                <span>SK, Canada</span>
-              </p>
-            </div>
-
-            <div>
-              <i className="fa fa-github" />
-              <p>Fallenefc</p>
-            </div>
-            <div>
-              <i className="fa-lg fa-envelope" />
-              <p>
-                <a href="mailto:arylmoraesn@gmail.com">arylmoraesn@gmail.com</a>
-              </p>
-            </div>
-          </div>
-          <div className="footer-right">
-            <p className="footer-company-about">
-              <span>About Me</span>
-              I am a web developer based in Canada.
-            </p>
-            <div className="footer-icons">{/* No icons yet */}</div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
