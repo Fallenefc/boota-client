@@ -1,10 +1,12 @@
 import React, { ReactElement } from 'react';
 import './styles.css';
-import { useHistory } from 'react-router-dom';
 import landingHero from '../../Assets/landing-hero.svg';
-import logo from '../../Assets/logo2.svg';
+import { LandingHeader } from '../../Components/LandingHeader/LandingHeader';
+import { useHistory } from 'react-router-dom';
 
 export default function Landing(): ReactElement {
+  const title = 'Boota';
+
   const history = useHistory();
 
   const handleClick = (event: any) => {
@@ -13,28 +15,10 @@ export default function Landing(): ReactElement {
       : history.push({ pathname: '/signup' });
   };
 
-  const title = 'Boota';
-
   return (
     <div className="landing-page">
       <div className="landing-container">
-        <div className="landing-header">
-          <div className="left-content">
-            <span>About</span>
-            <span>Contact</span>
-          </div>
-          <div className="middle-content">
-            <img src={logo} height="70px" alt="logo" />
-          </div>
-          <div className="right-content">
-            <button className="login-btn" name="login" onClick={handleClick} type="button">
-              Log In
-            </button>
-            <button className="signup-btn" name="signup" onClick={handleClick} type="button">
-              Sign Up
-            </button>
-          </div>
-        </div>
+        <LandingHeader />
         <div className="landing-content">
           <div className="landing-text">
             <h2>
@@ -106,7 +90,7 @@ export default function Landing(): ReactElement {
               <p>Fallenefc</p>
             </div>
             <div>
-              <i className="fa fa-envelope" />
+              <i className="fa-lg fa-envelope" />
               <p>
                 <a href="mailto:arylmoraesn@gmail.com">arylmoraesn@gmail.com</a>
               </p>
