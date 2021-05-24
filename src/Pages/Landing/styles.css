@@ -1,9 +1,7 @@
 .landing-page {
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--color-secondary);
   color: var(--color-clear);
   overflow-x: hidden;
@@ -12,7 +10,6 @@
 
 .landing-container {
   width: 100%;
-  height: 73%;
   display: flex;
   flex-direction: column;
   background-color: var(--color-primary);
@@ -20,15 +17,19 @@
 
 .landing-content {
   background-color: var(--color-primary);
-  height: 90%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.landing-image {
+  display: none;
+}
+
 .landing-text {
-  width: 40%;
-  padding: 80px;
+  width: 100%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,6 +95,17 @@
   margin-bottom: 25px;
 }
 
+@media (min-width: 900px) {
+  .landing-image {
+    display: flex;
+  }
+
+  .landing-text {
+    padding: 4rem;
+    width: 40%;
+  }
+}
+
 /* footer {
   background-color: var(--color-secondary-dark);
   height: 20%;
@@ -109,9 +121,9 @@
 
 footer{
 	/* position: fixed; */
-  /* bottom: 0; */
+  bottom: 0;
   min-height: 250px;
-  height: 12%;
+  height: 5%;
 }
 
 footer:hover {
