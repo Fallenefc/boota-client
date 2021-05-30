@@ -1,17 +1,18 @@
 .footer {
-    background-color: var(--color-secondary-dark);
+    background-color: var(--color-primary-light);
     height: 25vh;
     display: flex;
     justify-content: space-between;
     padding: 2rem;
     align-items: center;
+    color: #fff;
 }
 
 .copyright {
     text-align: center;
     padding: .5rem;
     border-top: 1px solid white;
-    background-color: var(--color-secondary-dark);
+    background-color: var(--color-primary-light);
 }
 
 .footer-left {

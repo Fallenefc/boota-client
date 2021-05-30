@@ -14,12 +14,12 @@
   }
   
   .landing-header:hover {
-    background-color: var(--color-secondary-dark);
-    color: var(--color-primary)
+    background-color: var(--color-primary-light);
+    color: #fff;
   }
   
   .left-content {
-    margin-left: 50px
+    margin-left: .5rem;
   }
   
   .right-content {
@@ -36,7 +36,7 @@
     margin-right: 50px;
   }
 
-  .left-content, .right-content {
+  .middle-content, .right-content {
       display: none;
   }
 
@@ -47,11 +47,30 @@
   }
 
   @media only screen and (min-width: 900px) {
-    .left-content, .right-content {
+    .middle-content, .right-content {
         display: flex;
+    }
+
+    .middle-content {
+      min-width: 20vw;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .middle-content a {
+      padding: 0 2rem;
     }
 
     .mobile-menu {
         display: none;
+    }
+
+    .right-content {
+      margin-right: 2rem;
+    }
+
+    .left-content {
+      margin-left: 3rem;
     }
   }

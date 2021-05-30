@@ -7,25 +7,26 @@ export const LandingHeader = () => {
     return (
         <div className="landing-header">
             <div className="left-content">
+                <img src={logo} height="70px" alt="logo" />
+            </div>
+            <div className="middle-content">
                 <a href="/about">
-                    <span>About</span>
+                    <span>Demo</span>
+                </a>
+                <a href='/contact'>
+                    <span>Pricing</span>
+                </a>
+                <a href='/contact'>
+                    <span>About Us</span>
                 </a>
                 <a href='/contact'>
                     <span>Contact</span>
                 </a>
             </div>
-            <div className="middle-content">
-                <img src={logo} height="70px" alt="logo" />
-            </div>
             <div className="right-content">
                 <a href="/login">
                     <button className="login-btn" name="login" type="button">
                         Log In
-                    </button>
-                </a>
-                <a href="/signup">
-                    <button className="signup-btn" name="signup" type="button">
-                        Sign Up
                     </button>
                 </a>
             </div>
