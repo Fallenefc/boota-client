@@ -5,11 +5,23 @@
 
 .signup-form-container {
   background-color: white;
-  width: 40%;
-  height: 100%;
+  width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-right: 10px solid var(--color-primary);
-  padding-left: 80px;
+  padding: 1rem;
+}
+
+@media (min-width: 900px) {
+  .img-container {
+    display: flex;
+  }
+
+  .signup-form-container {
+    width: 40%;
+    min-height: unset;
+    padding-left: 80px;
+    border-right: 10px solid var(--color-primary);
+  }
 }

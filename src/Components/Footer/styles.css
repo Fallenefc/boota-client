@@ -1,0 +1,37 @@
+.footer {
+    background-color: var(--color-primary-light);
+    height: 25vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+    color: #fff;
+}
+
+.copyright {
+    text-align: center;
+    padding: .5rem;
+    border-top: 1px solid white;
+    background-color: var(--color-primary-light);
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-left a {
+    padding: .5rem 0;
+    text-align: center;
+}
+
+.footer-right {
+    text-align: center;
+}
+
+@media (min-width: 900px) {
+    .footer {
+        height: 15vh;
+        padding: 2rem 15rem;
+    }
+}

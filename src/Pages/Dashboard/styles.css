@@ -7,7 +7,7 @@
   height: 100%;
   background: var(--color-secondary-dark);
   color: white;
-  /* background: rgb(234,144,244); */
+  padding: 2rem;
 }
 
 .dashboard-nav-and-container {

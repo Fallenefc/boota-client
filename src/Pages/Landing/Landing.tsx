@@ -1,10 +1,13 @@
 import React, { ReactElement } from 'react';
 import './styles.css';
-import { useHistory } from 'react-router-dom';
 import landingHero from '../../Assets/landing-hero.svg';
-import logo from '../../Assets/logo2.svg';
+import { LandingHeader } from '../../Components/LandingHeader/LandingHeader';
+import { useHistory } from 'react-router-dom';
+import { Footer } from '../../Components/Footer/Footer';
 
 export default function Landing(): ReactElement {
+  const title = 'Boota';
+
   const history = useHistory();
 
   const handleClick = (event: any) => {
@@ -13,28 +16,10 @@ export default function Landing(): ReactElement {
       : history.push({ pathname: '/signup' });
   };
 
-  const title = 'Boota';
-
   return (
     <div className="landing-page">
       <div className="landing-container">
-        <div className="landing-header">
-          <div className="left-content">
-            <span>About</span>
-            <span>Contact</span>
-          </div>
-          <div className="middle-content">
-            <img src={logo} height="70px" alt="logo" />
-          </div>
-          <div className="right-content">
-            <button className="login-btn" name="login" onClick={handleClick} type="button">
-              Log In
-            </button>
-            <button className="signup-btn" name="signup" onClick={handleClick} type="button">
-              Sign Up
-            </button>
-          </div>
-        </div>
+        <LandingHeader />
         <div className="landing-content">
           <div className="landing-text">
             <h2>
@@ -77,49 +62,7 @@ export default function Landing(): ReactElement {
             />
           </div>
         </div>
-        <footer className="footer-distributed">
-          <div className="footer-left">
-            {/* <img src="img/logo.png"></img> */}
-            <h3>
-              About
-              <span> Me</span>
-            </h3>
-
-            <span className="footer-links">
-              <p>Home</p>
-              <p>About</p>
-              <p>Contact</p>
-            </span>
-
-            <p className="footer-company-name">© 2020 FallenEFC</p>
-          </div>
-          <div className="footer-center">
-            <div>
-              <i className="fa fa-map-marker" />
-              <p>
-                <span>SK, Canada</span>
-              </p>
-            </div>
-
-            <div>
-              <i className="fa fa-github" />
-              <p>Fallenefc</p>
-            </div>
-            <div>
-              <i className="fa fa-envelope" />
-              <p>
-                <a href="mailto:arylmoraesn@gmail.com">arylmoraesn@gmail.com</a>
-              </p>
-            </div>
-          </div>
-          <div className="footer-right">
-            <p className="footer-company-about">
-              <span>About Me</span>
-              I am a web developer based in Canada.
-            </p>
-            <div className="footer-icons">{/* No icons yet */}</div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
