@@ -23,6 +23,10 @@
   padding: 0 1rem;
 }
 
+.logout-button {
+  display: none;
+}
+
 .logout-button button {
   background-color: var(--color-secondary-dark);
   border: none;
@@ -49,5 +53,9 @@
 @media (min-width: 900px) {
   .header {
     padding: 1rem;
+  }
+
+  .logout-button {
+    display: block;
   }
 }

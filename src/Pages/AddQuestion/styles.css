@@ -15,7 +15,7 @@
   padding-top: 50px;
   height: 100%;
   overflow-y: scroll;
-  width: 80%;
+  width: 100%;
   background: white;
   box-shadow: 2px 9px 10px 8px #ffe4e1;
 
@@ -85,6 +85,7 @@
   display: flex;
   padding: 10px;
   align-items: center;
+  flex-direction: column;
 }
 
 .options span{
@@ -120,4 +121,15 @@ textarea {
   font-size: 17px;
   width: 90%;
   font-family: Ubuntu;
+}
+
+@media (min-width: 900px) {
+  .question-form {
+    width: 80%;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: row;
+  }
 }

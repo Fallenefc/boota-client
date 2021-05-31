@@ -40,6 +40,9 @@ export default function Header(): ReactElement<React.FC> {
           {user?.name}
           !
         </div>
+        <div className="logout-button">
+          <button onClick={handleLogout} type="button">Logout</button>
+        </div>
         <div className="mobile-menu">
           <i className="fa fa-bars" onClick={toggleDropdown}></i>
           {dropdown ?
