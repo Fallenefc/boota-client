@@ -7,18 +7,20 @@
 }
 
 .left-nav-bar button {
-  /* background-color: var(--color-secondary-dark); */
-  background: linear-gradient(0deg, var(--color-secondary-dark), var(--color-secondary));
+  background-color: var(--color-secondary-dark);
+  /* background: linear-gradient(0deg, var(--color-secondary-dark), var(--color-secondary)); */
   border: none;
   cursor: pointer;
   width: 100%;
   height: 50px;
   color: white;
   font-weight: 600;
+  border-radius: 0;
 }
 
 .left-nav-bar button:hover {
-  background: linear-gradient(0deg, var(--color-secondary), var(--color-secondary-light));
+  background: var(--color-secondary-light);
+  /* background: linear-gradient(0deg, var(--color-secondary), var(--color-secondary-light)); */
   transition: ease 0.3s;
   color: black;
 }

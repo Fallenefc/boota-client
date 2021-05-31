@@ -61,7 +61,7 @@
 }
 
 .no-account span {
-  color: var(--color-secondary);
+  color: var(--color-tertiary-light);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -88,7 +88,7 @@ form button {
   width: 90%;
   border: none;
   height: 50px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-tertiary);
   font-weight: 600;
   color: white;
   font-size: 18px;
@@ -97,7 +97,7 @@ form button {
 }
 
 form button:hover {
-  background-color: var(--color-secondary-dark);
+  background-color: var(--color-tertiary-lighter);
   transition: ease 0.5s;
 }
 
@@ -118,7 +118,7 @@ form button:hover {
 .login-container-footer span {
   margin-right: 100px;
   font-size: 20px;
-  color: var(--color-secondary-dark);
+  color: var(--color-tertiary);
   text-decoration: underline;
   cursor: pointer;
 }
