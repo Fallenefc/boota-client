@@ -13,16 +13,15 @@ export const LandingHeader = () => {
     return (
         <div className="landing-header">
             <div className="left-content">
-                <img src={logo} height="70px" alt="logo" />
+                <a href="/">
+                    <img src={logo} height="70px" alt="logo" />
+                </a>
             </div>
             <div className="middle-content">
-                <a href="/about">
-                    <span>Demo</span>
-                </a>
-                <a href='/contact'>
+                <a href='/pricing'>
                     <span>Pricing</span>
                 </a>
-                <a href='/contact'>
+                <a href='/about'>
                     <span>About Us</span>
                 </a>
                 <a href='/contact'>
@@ -42,10 +41,9 @@ export const LandingHeader = () => {
                 <div className="dropdown-content">
                     <i className="fa fa-times modal-close" onClick={toggleDropdown}></i>
                     <section className='anchors'>
-                        <a>Demo</a>
-                        <a>Pricing</a>
-                        <a>About Us</a>
-                        <a>Contact</a>
+                        <a href='/pricing'>Pricing</a>
+                        <a href='/about'>About Us</a>
+                        <a href='/contact'>Contact</a>
                     </section>
                     <section className="login">
                         <a>Login</a>
