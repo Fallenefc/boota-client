@@ -9,7 +9,7 @@ import { TextSection } from '../../Components/sections/TextSection/TextSection';
 import content from './landing.json';
 
 export default function Landing(): ReactElement {
-  const title = 'Boota';
+  const title = 'Quizilla';
 
   const history = useHistory();
 
@@ -36,7 +36,7 @@ export default function Landing(): ReactElement {
               {title}
               {' '}
               allows you to create your own personal multiple choice
-              question bank.
+              question bank.{' '}
               {title}
               {' '}
               also allows you to create quizzes with

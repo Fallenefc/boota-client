@@ -17,7 +17,7 @@ interface Props {
 
 export const TextSection = (props: Props) => {
     return (
-        <div className="text-section-wrapper">
+        <div className={ props.image ? 'text-section-wrapper' : 'text-section-wrapper no-image'}>
             { props.image ?
             <div className="image-section">
                 <img src={props.image}>

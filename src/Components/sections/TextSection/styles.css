@@ -3,6 +3,7 @@
     background: #fff;
     min-height: 50vh;
     padding: 2rem;
+    font-size: 1.2rem;
 
     color: var(--color-tertiary);
 
@@ -14,6 +15,10 @@
     font-family: 'Quicksand', sans-serif;
 
     text-align: center;
+}
+
+.no-image {
+    justify-content: center;
 }
 
 .text-section-title {
