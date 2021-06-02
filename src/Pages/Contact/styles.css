@@ -1,0 +1,62 @@
+.contact-page-container {
+    min-height: 70vh;
+    background-color: #FFFAFA;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contact-page-form {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-page-img {
+    display: none;
+}
+
+.contact-page-form label {
+    padding: .5rem 0;
+    font-weight: 600;
+}
+
+.contact-page-form input, .contact-page-form textarea, .contact-page-form button {
+    width: 100%;
+}
+
+.contact-page-form textarea {
+    min-height: 7rem;
+}
+
+.contact-title {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+@media (min-width: 900px) {
+    .contact-page-img {
+        display: block;
+
+        width: 40%;
+        height: 80%;
+    }
+
+    .contact-page-img img {
+        max-width: 100%;
+        max-height: auto;
+    }
+
+    .contact-page-form {
+        width: 40%;
+        padding: 1rem;
+    }
+}
