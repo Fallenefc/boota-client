@@ -34,7 +34,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .landing-text h2 {
@@ -94,7 +94,7 @@
   color: white;
   font-size: 2rem;
   font-weight: 400;
-  width: 100vw;
+  width: 100vw !important;
   height: 50vh;
   left: 0;
   top: 0;
@@ -142,10 +142,17 @@
 @media (min-width: 900px) {
   .landing-image {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
   }
 
   .landing-text {
     padding: 4rem;
-    width: 40%;
+    width: 50%;
+  }
+
+  .landing-content {
+    min-height: 60vh;
   }
 }

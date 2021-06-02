@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { State } from '../../Store/reducer';
 import './styles.css';
-import logoImg from '../../Assets/logo2.svg';
+import logoImg from '../../Assets/logo.svg';
 import { addUser } from '../../Store/actions';
 
 export default function Header(): ReactElement<React.FC> {
@@ -31,7 +31,7 @@ export default function Header(): ReactElement<React.FC> {
     <header className="header">
       <div className="header-left">
         <div className="website-logo" onClick={handleClick}>
-          <img src={logoImg} height="100%" width="70px" alt="header logo" />
+          <img src={logoImg} height="100%" width="150px" alt="header logo" />
         </div>
       </div>
       <div className="user-logout">

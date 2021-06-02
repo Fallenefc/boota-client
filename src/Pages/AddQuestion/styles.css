@@ -120,7 +120,7 @@ textarea {
   padding: 10px;
   font-size: 17px;
   width: 90%;
-  font-family: Ubuntu;
+  font-family: 'Quicksand', sans-serif;
 }
 
 @media (min-width: 900px) {

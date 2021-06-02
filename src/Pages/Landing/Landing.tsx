@@ -1,12 +1,15 @@
 import React, { ReactElement } from 'react';
 import './styles.css';
 import landingHero from '../../Assets/landing-hero.svg';
+import createTestImg from '../../Assets/section-1-img.png';
 import { LandingHeader } from '../../Components/LandingHeader/LandingHeader';
 import { useHistory } from 'react-router-dom';
 import { Footer } from '../../Components/Footer/Footer';
+import { TextSection } from '../../Components/sections/TextSection/TextSection';
+import content from './landing.json';
 
 export default function Landing(): ReactElement {
-  const title = 'Boota';
+  const title = 'Quizilla';
 
   const history = useHistory();
 
@@ -33,7 +36,7 @@ export default function Landing(): ReactElement {
               {title}
               {' '}
               allows you to create your own personal multiple choice
-              question bank.
+              question bank.{' '}
               {title}
               {' '}
               also allows you to create quizzes with
@@ -62,6 +65,7 @@ export default function Landing(): ReactElement {
             />
           </div>
         </div>
+        <TextSection text={content['text-section-1'].text} title={content['text-section-1'].title} image={createTestImg} />
         <Footer />
       </div>
     </div>

@@ -7,10 +7,13 @@
     transition: background-color 0.5s ease;
     min-height: 100px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid white;
+  }
+
+  .landing-header div {
+    width: 50%;
   }
   
   .landing-header:hover {
@@ -25,11 +28,21 @@
   .right-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .mobile-menu {
       font-size: 3rem;
+      width: 50% !important;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+  }
+
+  .mobile-menu .fa-bars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .left-content span:first-child {
@@ -72,5 +85,9 @@
 
     .left-content {
       margin-left: 3rem;
+    }
+
+    .landing-header div {
+      width: 33%;
     }
   }
