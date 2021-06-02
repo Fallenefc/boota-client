@@ -36,7 +36,9 @@
     height: 15rem;
     width: 15rem;
     border-radius: 50%;
-    background-size: 100%;
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .team-card .team-card-info {
@@ -72,5 +74,11 @@ color: grey;
         max-width: 80vw;
         flex-direction: row;
         text-align: unset;
+
+        align-items: center;
+    }
+
+    .team-card .team-card-image {
+        width: 70%;
     }
 }

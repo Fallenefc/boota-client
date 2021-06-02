@@ -142,11 +142,14 @@
 @media (min-width: 900px) {
   .landing-image {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
   }
 
   .landing-text {
     padding: 4rem;
-    width: 40%;
+    width: 50%;
   }
 
   .landing-content {
