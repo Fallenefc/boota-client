@@ -12,4 +12,39 @@
 
 .options-container{
   margin-top: 5px;
+  background-color: var(--color-primary);
+  color: white;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.options-container label {
+  padding: 1rem;
+  width: 100%;
+
+  cursor: pointer;
+}
+
+.options-container input {
+  display: none;
+}
+
+.options-container span {
+  background-color: var(--color-primary-light);
+  height: 100%;
+  width: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  background-color: var(--color-tertiary);
+}
+
+.selected span {
+  background-color: var(--color-tertiary-light);
 }

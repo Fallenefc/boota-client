@@ -8,7 +8,7 @@ export default function AddQuestion(): ReactElement {
 
   const [options, setOptions] = useState(['', '', '']);
   const [stem, setStem] = useState('');
-  const [correct, setCorrect] = useState<number | null>(null);
+  const [correct, setCorrect] = useState<number | null>(0);
   const [title, setTitle] = useState('');
 
   const dispatch = useDispatch();
@@ -107,6 +107,7 @@ export default function AddQuestion(): ReactElement {
               <input
                 type="radio"
                 name="correct"
+                checked={index === correct}
                 value={index}
                 onChange={() => setCorrect(index)}
               />
