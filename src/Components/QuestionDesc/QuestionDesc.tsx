@@ -16,10 +16,9 @@ const QuestionDesc = ({ info }: Props) => {
       </p>
       <p className="question-stem">{info.stem}</p>
       {info.options.map((option: any, optionIndex: any) => (
-        <div key={optionIndex} className="question-option">
-          {optionsNameArray[optionIndex]}
-          )
-          {option}
+        <div key={optionIndex} className={optionIndex === info.correct ? "question-option correct-option-choice" : "question-option"}>
+          <span className={optionIndex === info.correct ? "question-choice correct-choice" : "question-choice"}>{optionsNameArray[optionIndex]}</span>
+          <span className={optionIndex === info.correct ? "question-text correct-choice-text" : "question-text"}>{option}</span>
         </div>
       ))}
       <div className="correct">

@@ -10,6 +10,9 @@ export default function QuestionList(): ReactElement {
 
   return (
     <div className="question-view-container">
+      <div className='question-total'>
+        Total Questions: {questions.length}
+      </div>
       {questions.map((value, index) => (
         <QuestionCard
           info={value}

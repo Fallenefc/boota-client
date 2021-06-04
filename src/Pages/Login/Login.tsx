@@ -42,14 +42,14 @@ export default function Login(): ReactElement {
         history.push({ pathname: '/' });
         dispatch(addUser(response.data.user));       
         dispatch(resetApiCall());
+            // reset
+        setEmail('');
+        setPassword('');
       })
       .catch(() => {
         setIsLoading(false);
         setAlertModal(true);
       });
-    // reset
-    setEmail('');
-    setPassword('');
   };
 
   const redirectToHome = () => {
@@ -94,6 +94,7 @@ export default function Login(): ReactElement {
                 name="email"
                 onChange={handleChange}
                 value={email}
+                required
               />
               <p>Password</p>
               <input
@@ -101,6 +102,7 @@ export default function Login(): ReactElement {
                 name="password"
                 onChange={handleChange}
                 value={password}
+                required
               />
               <span className="keep-logged">
                 <span>Keep me logged in</span>

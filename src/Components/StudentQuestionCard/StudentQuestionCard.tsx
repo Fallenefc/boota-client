@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import './styles.css';
 
 interface Props {
@@ -16,6 +16,16 @@ export default function StudentQuestionCard({
   handleChoice,
   id,
 }: Props): ReactElement {
+
+  const questionOptions = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
+  const [selected, setSelected] = useState(null);
+
+  const handleClick = (_: any, id: any, mapIndex: any) => {
+    handleChoice(id, mapIndex);
+    setSelected(mapIndex);
+  }
+
   return (
     <div className="student-question-card" key={id}>
       <h3 className="student-question-stem">
@@ -24,13 +34,15 @@ export default function StudentQuestionCard({
         {stem}
       </h3>
       {options.map((option: string, mapIndex: number) => (
-        <div className="options-container" key={mapIndex}>
+        <div className={selected === mapIndex ? 'options-container selected' : 'options-container'} key={mapIndex}>
+          <span>{questionOptions[mapIndex]}</span>
+          <label onClick={(event) => handleClick(event, id, mapIndex)} htmlFor={index.toString()}>
           <input
             type="radio"
-            onClick={() => handleChoice(id, mapIndex)}
+            onClick={(event) => handleClick(event, id, mapIndex)}
             name={index.toString()}
           />
-          {option}
+          {option}</label>
         </div>
       ))}
     </div>

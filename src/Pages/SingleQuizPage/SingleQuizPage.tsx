@@ -44,7 +44,7 @@ export default function SingleQuizPage(): ReactElement {
 
   const submitQuiz = async () => {
     const response: any = await submitAnExamAsATeacher(fullQuiz._id);
-    dispatch(makeAQuizSubmittion(response.updatedExam));
+    dispatch(makeAQuizSubmittion(response));
     history.push({ pathname: "/viewQuizzes" });
   };
 
