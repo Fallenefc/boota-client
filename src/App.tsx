@@ -20,7 +20,6 @@ function App() {
   useEffect(() => {
     getInfo()
       .then((response): void => {
-        console.log(response);
         if (response === false) {
           // set user info to false
           dispatch(apiCallIsMade());
