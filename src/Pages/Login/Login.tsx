@@ -3,7 +3,7 @@ import './styles.css';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import pageImage from '../../Assets/login-hero.svg';
-import logoImg from '../../Assets/logo2.svg';
+import logoImg from '../../Assets/quizilla.svg';
 import { logIn } from '../../Services/ApiClientUser';
 import AlertModal from '../../Components/AlertModal/AlertModal';
 import { addUser, resetApiCall } from '../../Store/actions';

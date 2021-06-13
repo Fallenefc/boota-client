@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import logoImg from '../../Assets/logo2.svg';
+import logoImg from '../../Assets/quizilla.svg';
 import pageImage from '../../Assets/undraw_welcome_cats_thqn.svg';
 import AlertModal from '../../Components/AlertModal/AlertModal';
 import AlertText from '../../Components/AlertText/AlertText';
@@ -159,7 +159,7 @@ const Signup = () => {
                   {' '}
                   <span className="green">Terms and Conditions</span>
                 </span>
-                <input type="checkbox" />
+                <input type="checkbox" required />
               </span>
               <button type="submit">Sign Up</button>
             </form>
